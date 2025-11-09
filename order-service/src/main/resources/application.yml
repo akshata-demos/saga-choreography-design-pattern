@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: order_Supplier;paymentEvent_Consumer
+      bindings:
+        order_Supplier-out-0:
+          destination: order-event
+        paymentEvent_Consumer-in-0:
+          destination: payment-event
+  kafka:
+    bootstrap-servers: localhost:9092
+
+#server.port: 8081
+
+#Saga Pattern - 1:12:43
